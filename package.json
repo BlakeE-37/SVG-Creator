@@ -1,0 +1,27 @@
+{
+  "name": "svg-creator",
+  "version": "1.0.0",
+  "description": "A command line application that when run, will create a logo as an svg file, based on user input.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlakeE-37/SVG-Creator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BlakeE-37/SVG-Creator/issues"
+  },
+  "homepage": "https://github.com/BlakeE-37/SVG-Creator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
