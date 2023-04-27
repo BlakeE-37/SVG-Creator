@@ -1,5 +1,13 @@
-const shape = require('./lib/shape')
-const inquirer = require('inquirer')
+const shape = require('./lib/shape');
+const inquirer = require('inquirer');
+const fs = require('fs');
+
+// function that uses file-system to creat the svg file
+function wrtieToFile(data) {
+    fs.writeFile('logo.svg', data, (err) => {
+        err ? console.error(err) : console.log('Generated logo.svg')
+    });
+};
 
 //initialize the application
 function init() {
