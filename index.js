@@ -1,4 +1,5 @@
-const shape = require('./lib/shape');
+const { Triangle, Circle, Square } = require('./lib/shape');
+const Text = require('./lib/text')
 const inquirer = require('inquirer');
 const fs = require('fs');
 
@@ -35,10 +36,17 @@ function init() {
                 name: 'shapeColor'
             }
         ]).then((response) => {
-            console.log(response.text)
-            console.log(response.textColor)
-            console.log(response.shape)
-            console.log(response.shapeColor)
+            // get the correct shapes svg code
+            switch (response.shape) {
+                case 'Triangle': var shape = new Triangle(response.shapeColor);
+                case 'Circle': var shape = new Circle(response.shapeColor);
+                case 'Square': var shape = new Square(response.shapeColor);
+            }
+
+            // get the text svg code
+            const logoText = new Text(response.text, response.textColor)
+
+
         })
 }
 
