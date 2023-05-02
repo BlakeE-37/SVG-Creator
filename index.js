@@ -4,7 +4,17 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // function that uses file-system to creat the svg file
-function wrtieToFile(data) {
+function wrtieToFile(text, shape) {
+    // create the text formatted for the svg file 
+    let data = `
+    <svg version="1.1"
+     width="300" height="200"
+     xmlns="http://www.w3.org/2000/svg">
+    ${shape}
+    ${text}
+</svg>
+    `
+    // write the data to a new file
     fs.writeFile('logo.svg', data, (err) => {
         err ? console.error(err) : console.log('Generated logo.svg')
     });
