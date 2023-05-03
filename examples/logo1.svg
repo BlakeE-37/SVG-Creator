@@ -1,0 +1,6 @@
+<svg version="1.1"
+     width="300" height="200"
+     xmlns="http://www.w3.org/2000/svg">
+    <rect x="40" y="30" width="170" height="170" fill="black" />
+    <text x="130" y="130" font-size="60" text-anchor="middle" fill="orange">NS</text>
+</svg>
