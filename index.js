@@ -12,8 +12,8 @@ function wrtieToFile(text, shape) {
      xmlns="http://www.w3.org/2000/svg">
     ${shape}
     ${text}
-</svg>
-    `
+    </svg>`
+
     // write the data to a new file
     fs.writeFile('logo.svg', data, (err) => {
         err ? console.error(err) : console.log('Generated logo.svg')
@@ -49,8 +49,11 @@ function init() {
             // get the correct shapes svg code
             switch (response.shape) {
                 case 'Triangle': var shape = new Triangle(response.shapeColor);
+                    break
                 case 'Circle': var shape = new Circle(response.shapeColor);
+                    break
                 case 'Square': var shape = new Square(response.shapeColor);
+                    break
             }
 
             // ensure that the text is less than 3 character long and if so acquire the text svg code
