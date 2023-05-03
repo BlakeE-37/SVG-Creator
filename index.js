@@ -53,8 +53,19 @@ function init() {
                 case 'Square': var shape = new Square(response.shapeColor);
             }
 
-            // get the text svg code
-            const logoText = new Text(response.text, response.textColor)
+            // ensure that the text is less than 3 character long and if so acquire the text svg code
+            if (response.text.length > 3) {
+                console.log('Text must be 3 characters or less')
+            } else {
+                // create the text object
+                const text = new Text(response.text, response.textColor)
+
+                // use the text and shape render methods to acquire the svg code as a string
+                let logoShape = shape.render();
+                let logoText = text.render()
+                wrtieToFile(logoText, logoShape)
+            }
+
 
 
         })
